@@ -9,7 +9,7 @@ export default function
             <h3 className='font-bold text-xl'>Scholar<span className='text-[#4b1963]'>Connect</span></h3>
         </div>
 
-        <p>All rights reserved</p>
+        <p>Powered by PHScholarship.com</p>
     </div>
   )
 }

@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import image from "../../../../public/image.webp"
+import image2 from "../../../../public/image2.webp"
+import image3 from "../../../../public/image3.webp"
+import image4 from "../../../../public/image4.webp"
 
 interface ScrapeResult {
     title: string,
@@ -33,6 +37,19 @@ export default function Card() {
         window.open(link, '_blank'); 
     };
 
+    const images = [image, image2, image3, image4]
+
+    const getRandomImage = () => {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        return images[randomIndex];
+      };
+
+    const numberOfCards = 5;    
+
+    const randomImages = Array.from({ length: numberOfCards }, getRandomImage);
+
+
+
     return (
         <>
             {results.map((result, index) => (
@@ -50,7 +67,7 @@ export default function Card() {
                         {error && <p style={{ color: 'red' }}>{error}</p>}
                     </div>
                 </div>
-                <div>
+                <div className='w-1/2'>
                     <p className='font-bold' key={index}> {result.title}</p>
                 </div>
                 <div>
@@ -58,7 +75,14 @@ export default function Card() {
                     See more
                 </button>
                 </div>
-                {/* <div className='bg-black absolute w-[170px] h-[200px] right-0 bottom-0'></div> */}
+
+                {randomImages.map((image, index) => (
+
+                    <div key={index} className="bg-black absolute w-[190px] h-[250px] right-0 bottom-0">
+                        <img className="h-[250px] object-cover" src={image} alt={`Random ${index}`} />
+                    </div>
+
+                ))}
             </div>
 
             ))}

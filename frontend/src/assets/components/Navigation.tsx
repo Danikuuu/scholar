@@ -1,4 +1,4 @@
-import { faArrowDownShortWide, faMagnifyingGlass, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDownShortWide, faGraduationCap, faInfo, faMagnifyingGlass, faQuestion, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -13,12 +13,12 @@ export default function Navigation() {
 
             <div className='flex justify-center items-center gap-10'>
               <div className='flex hover:cursor-pointer items-center gap-2'>
-                <FontAwesomeIcon className='text-[#451a58]' icon={faSearch} />
-                <p>Search</p>
+                <FontAwesomeIcon className='text-[#451a58]' icon={faGraduationCap} />
+                <p>Scholarships</p>
               </div>
               <div className='flex hover:cursor-pointer items-center gap-2'>
-                <FontAwesomeIcon className='text-[#451a58]' icon={faArrowDownShortWide} />
-                <p>Filter</p>
+                <FontAwesomeIcon className='text-[#451a58]' icon={faQuestion} />
+                <p>About</p>
               </div>
             </div>
         </nav>

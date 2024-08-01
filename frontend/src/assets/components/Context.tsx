@@ -1,8 +1,8 @@
-import React from 'react'
+
 
 export default function Context() {
   return (
-    <div className='w-100 py-[40px] px-[20px] bg-[#D06DFF] bg-opacity-60 flex justify-evenly items-center'>
+    <div className='w-100 py-[40px] px-[20px] bg-[#D06DFF] bg-opacity-60 flex justify-evenly items-center flex-wrap gap-10'>
         <div className='flex justify-center items-center gap-7'>
             <div className='h-[70px] w-[70px] bg-slate-800'>
 
