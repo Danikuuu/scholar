@@ -9,7 +9,14 @@ export default function Hero() {
           <FontAwesomeIcon icon={faSearch} className='text-9xl'/>
         </div>
 
-        <h1 className='font-bold text-5xl text-center'>Discover Scholarship opportunity <br />and make the best out of it</h1>
+        <h1 className='font-bold text-5xl text-center mb-4 '>
+            Explore Your Scholarship Options <br />
+            and Maximize Your Potential
+        </h1>
+        <h2 className='text-xl text-center text-gray-700'>
+            Find the right opportunities to advance your education.
+        </h2>
+
     </div>
   )
 }

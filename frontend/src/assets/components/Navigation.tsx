@@ -1,25 +1,18 @@
-import { faArrowDownShortWide, faGraduationCap, faInfo, faMagnifyingGlass, faQuestion, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navigation() {
   return (
     <>
-        <nav className='w-[100%] p-7 px-[100px] shadow-lg shadow-[#d16dff52] mb-[30px] flex justify-between items-center sticky right-0 top-0 z-50 bg-white'>
+        <nav className='w-[100%] p-7 px-[100px] shadow-lg shadow-[#d16dff52] mb-[30px] flex xl:justify-between lg:justify-between md:justify-between sm:justify-center xs:justify-center items-center sticky right-0 top-0 z-50 bg-white'>
             <div className='flex justify-center items-center'>
                 {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
+                <FontAwesomeIcon icon={faGraduationCap} className="text-4xl" />
                 <h3 className='font-bold text-xl'>Scholar<span className='text-[#4b1963]'>Connect</span></h3>
             </div>
 
-            <div className='flex justify-center items-center gap-10'>
-              <div className='flex hover:cursor-pointer items-center gap-2'>
-                <FontAwesomeIcon className='text-[#451a58]' icon={faGraduationCap} />
-                <p>Scholarships</p>
-              </div>
-              <div className='flex hover:cursor-pointer items-center gap-2'>
-                <FontAwesomeIcon className='text-[#451a58]' icon={faQuestion} />
-                <p>About</p>
-              </div>
+            <div className="hidden xl:block lg:block md:block">
+              <p className="text-lg font-bold cursor-pointer hover:text-[#4b1963]">Scholarships</p>
             </div>
         </nav>
     </>

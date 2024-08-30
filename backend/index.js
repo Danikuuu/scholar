@@ -4,23 +4,9 @@ const cheerio = require('cheerio');
 const cors = require('cors');
 
 const app = express();
+const PORT = 5000;
 
-// CORS Configuration
-app.use(cors({
-    origin: "https://scholar-sigma.vercel.app",
-    methods: ["POST", "GET"],
-    credentials: true
-}));
-
-// Additional CORS Headers for Debugging
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://scholar-sigma.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST");
-    res.header("Access-Control-Allow-Headers", "Content-Type");
-    res.header("Access-Control-Allow-Credentials", "true");
-    next();
-});
-
+app.use(cors());
 app.use(express.json());
 
 app.get('/scrape', async (req, res) => {
@@ -43,10 +29,11 @@ app.get('/scrape', async (req, res) => {
             const $ = cheerio.load(data);
 
             $('article').each((index, element) => {
-                const title = $(element).find('p').text().trim();
+                const title = $(element).find('p').text().trim()
                 const link = $(element).find('a').attr('href');
                 results.push({ title, link });
             });
+
 
             const nextPageExists = $('a.next').length > 0; 
 
@@ -64,7 +51,6 @@ app.get('/scrape', async (req, res) => {
     }
 });
 
-// Vercel handles the port, so no need to specify it
-app.listen(() => {
-    console.log(`Server is running on Vercel.`);
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
